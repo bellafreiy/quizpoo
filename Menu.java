@@ -42,6 +42,9 @@ public class Menu {
         }
     }
 
+    private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner) {
+    }
+
     private void exibirMenu() {
     }
 
@@ -74,7 +77,7 @@ public class Menu {
         System.out.println("Você fez " + pontos + " pontos nesta jogada.");
     }
 
-    private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner) {
+    private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner, String enunciadoVerdadeiroFalso) {
         System.out.println("Escolha o tipo de pergunta:");
         System.out.println("1- Pergunta Aberta");
         System.out.println("2- Pergunta de Múltipla Escolha");
@@ -87,7 +90,7 @@ public class Menu {
 
         switch (tipo) {
             case 1:
-                PerguntaAberta perguntaAberta = new PerguntaAberta(enunciado);
+                PerguntaAberta perguntaAberta = new PerguntaAberta(enunciado, enunciado);
                 perguntas.add(perguntaAberta);
                 break;
             case 2:
@@ -138,7 +141,7 @@ public class Menu {
             }
         
                 PerguntaVerdadeiroFalso perguntaVerdadeiroOuFalso = new PerguntaVerdadeiroFalso(enunciadoVerdadeiroFalso, respostaCorreta);
-                perguntas.add(perguntaVerdadeiroFalso);
+                Pergunta perguntaVerdadeiroFalso;
                 System.out.println("Pergunta verdadeiro ou falso criada com sucesso.");
                 break;
         

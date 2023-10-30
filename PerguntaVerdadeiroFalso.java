@@ -1,6 +1,6 @@
 package quizpoo;
 public class PerguntaVerdadeiroFalso extends Pergunta {
-    public PerguntaVerdadeiroFalso(String enunciado) {
+    public PerguntaVerdadeiroFalso(String enunciado, boolean respostaCorreta2) {
         super(enunciado);
     }
     private boolean respostaCorreta;

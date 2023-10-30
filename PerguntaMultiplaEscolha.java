@@ -1,6 +1,6 @@
 package quizpoo;
 public class PerguntaMultiplaEscolha extends Pergunta {
-    public PerguntaMultiplaEscolha(String enunciado) {
+    public PerguntaMultiplaEscolha(String enunciado, String[] alternativas, int respostaCorreta2) {
         super(enunciado);
     }
     private String[] opcoes;
