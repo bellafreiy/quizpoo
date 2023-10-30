@@ -6,6 +6,15 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Menu {
+    public void exibirMenu() {
+        System.out.println("        MENU ");
+        System.out.println("| 1- JOGAR            |");
+        System.out.println("| 2- CRIAR PERGUNTA   |");
+        System.out.println("| 3- EDITAR PERGUNTA  |");
+        System.out.println("| 4- EXCLUIR PERGUNTA |");
+        System.out.println("| 5- HISTÓRICO        |");
+        System.out.println("| 6- SAIR             |");
+    }
     public static void main(String[] args) {
         Menu menu = new Menu();
         List<Pergunta> perguntas = new ArrayList<>();
@@ -44,10 +53,6 @@ public class Menu {
 
     private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner) {
     }
-
-    private void exibirMenu() {
-    }
-
     private static void jogar(List<Pergunta> perguntas, HistóricoDeJogadas histórico) {
         if (perguntas.isEmpty()) {
             System.out.println("Não há perguntas disponíveis para jogar.");
@@ -78,10 +83,10 @@ public class Menu {
     }
 
     private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner, String enunciadoVerdadeiroFalso) {
-        System.out.println("Escolha o tipo de pergunta:");
-        System.out.println("1- Pergunta Aberta");
-        System.out.println("2- Pergunta de Múltipla Escolha");
-        System.out.println("3- Pergunta Verdadeiro ou Falso");
+        System.out.println("| ESCOLHA O TIPO DE QUESTÃO:   |");
+        System.out.println("| 1- PERGUNTA ABERTA           |");
+        System.out.println("| 2- PERGUNTA FECHADA          |");
+        System.out.println("| 3- PERGUNTA TRUE OR FALSE    |");
         int tipo = scanner.nextInt();
         scanner.nextLine(); // Limpar a quebra de linha
 
