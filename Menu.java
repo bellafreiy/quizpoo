@@ -30,7 +30,7 @@ public class Menu {
                     jogar(perguntas, histórico);
                     break;
                 case 2:
-                    criarPergunta(perguntas, scanner);
+                    criarPergunta(perguntas, scanner, null);
                     break;
                 case 3:
                     editarPergunta(perguntas, scanner);
@@ -49,9 +49,6 @@ public class Menu {
                     System.out.println("Opção inválida. Tente novamente.");
             }
         }
-    }
-
-    private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner) {
     }
     private static void jogar(List<Pergunta> perguntas, HistóricoDeJogadas histórico) {
         if (perguntas.isEmpty()) {
@@ -83,20 +80,25 @@ public class Menu {
     }
 
     private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner, String enunciadoVerdadeiroFalso) {
-        System.out.println("| ESCOLHA O TIPO DE QUESTÃO:   |");
+        System.out.println("ESCOLHA O TIPO DE QUESTÃO QUE DESEJA CRIAR:");
         System.out.println("| 1- PERGUNTA ABERTA           |");
         System.out.println("| 2- PERGUNTA FECHADA          |");
         System.out.println("| 3- PERGUNTA TRUE OR FALSE    |");
         int tipo = scanner.nextInt();
         scanner.nextLine(); // Limpar a quebra de linha
 
-        System.out.println("Digite o enunciado da pergunta:");
-        String enunciado = scanner.nextLine();
-
         switch (tipo) {
             case 1:
+                System.out.println("Digite o enunciado da pergunta:");
+                String enunciado = scanner.nextLine();
+                
                 PerguntaAberta perguntaAberta = new PerguntaAberta(enunciado, enunciado);
                 perguntas.add(perguntaAberta);
+                
+                System.out.println("Escolha a resposta correta:");
+                String respostaCorretaA = scanner.nextLine();
+                System.out.println("Resposta Adicionada!");
+
                 break;
             case 2:
                 System.out.println("Digite o enunciado da pergunta de múltipla escolha:");
