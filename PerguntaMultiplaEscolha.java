@@ -4,15 +4,14 @@ public class PerguntaMultiplaEscolha extends Pergunta {
         super(enunciado);
     }
     private String[] opcoes;
-    private int respostaCorreta;
+    private boolean respostaCorreta2;
 
     public void PerguntaFechada(String enunciado, String[] opcoes, int respostaCorreta) {
 
         this.opcoes = opcoes;
-        this.respostaCorreta = respostaCorreta;
+        this.respostaCorreta2 = respostaCorreta2;
     }
     public boolean verificarResposta(String resposta) {
-        int escolha = Integer.parseInt(resposta);
-        return escolha == respostaCorreta;
+        return respostaCorreta2;
     }
 }

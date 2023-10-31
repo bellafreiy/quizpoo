@@ -1,13 +1,13 @@
 package quizpoo;
 public class PerguntaAberta extends Pergunta {
-    private String respostaCorreta;
+    private String respostaCorretaA;
 
-    public PerguntaAberta(String enunciado, String respostaCorreta) {
+    public PerguntaAberta(String enunciado, String respostaCorretaA) {
         super(enunciado);
-        this.respostaCorreta = respostaCorreta;
+        this.respostaCorretaA = respostaCorretaA;
     }
-    public boolean verificarResposta(String resposta) {
-        return resposta.equalsIgnoreCase(respostaCorreta);
+    public boolean verificarResposta(String respostaCorretaA) {
+        return respostaCorretaA.equalsIgnoreCase(respostaCorretaA);
     }
 }
 

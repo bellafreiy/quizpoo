@@ -60,8 +60,9 @@ public class Menu {
         Random random = new Random();
 
         for (Pergunta pergunta : perguntas) {
+            System.out.println("Você Tem 20 Segundos para responder as perguntas!");
             System.out.println("Pergunta: " + pergunta.getEnunciado());
-            Temporizador temporizador = new Temporizador(10); // 10 segundos
+            Temporizador temporizador = new Temporizador(30); // 30 segundos
             temporizador.iniciarTemporizador();
             
             Scanner scanner = new Scanner(System.in);
@@ -97,6 +98,7 @@ public class Menu {
                 
                 System.out.println("Escolha a resposta correta:");
                 String respostaCorretaA = scanner.nextLine();
+                
                 System.out.println("Resposta Adicionada!");
 
                 break;
@@ -123,7 +125,7 @@ public class Menu {
                     System.out.println("Digite a letra da alternativa correta (A, B, C, D ou E):");
                     char letraRespostaCorreta = scanner.nextLine().charAt(0);
                 
-                    respostaCorreta = letraRespostaCorreta - 'A';
+                    respostaCorreta = letraRespostaCorreta;
         
                     PerguntaMultiplaEscolha perguntaMultiplaEscolha = new PerguntaMultiplaEscolha(enunciadoMultiplaEscolha, alternativas, respostaCorreta);
                     perguntas.add(perguntaMultiplaEscolha);
