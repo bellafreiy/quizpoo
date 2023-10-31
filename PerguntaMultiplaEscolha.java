@@ -1,17 +1,18 @@
 package quizpoo;
+
 public class PerguntaMultiplaEscolha extends Pergunta {
-    public PerguntaMultiplaEscolha(String enunciado, String[] alternativas, int respostaCorreta2) {
-        super(enunciado);
-    }
     private String[] opcoes;
-    private boolean respostaCorreta2;
+    private int respostaCorreta; // Alterado para um índice de alternativa correta
 
-    public void PerguntaFechada(String enunciado, String[] opcoes, int respostaCorreta) {
-
+    public PerguntaMultiplaEscolha(String enunciado, String[] opcoes, int respostaCorreta) {
+        super(enunciado);
         this.opcoes = opcoes;
-        this.respostaCorreta2 = respostaCorreta2;
+        this.respostaCorreta = respostaCorreta;
     }
     public boolean verificarResposta(String resposta) {
-        return respostaCorreta2;
+        int escolha = resposta.charAt(0) - 'A';
+
+        // Compara a escolha com a resposta correta
+        return escolha == respostaCorreta;
     }
 }

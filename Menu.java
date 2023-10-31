@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Menu {
+    private static String enunciadoVerdadeiroFalso;
+    private static int letraRespostaCorreta;
+
     public void exibirMenu() {
         System.out.println("        MENU ");
         System.out.println("| 1- JOGAR            |");
@@ -30,7 +33,7 @@ public class Menu {
                     jogar(perguntas, histórico);
                     break;
                 case 2:
-                    criarPergunta(perguntas, scanner, null);
+                    criarPergunta(perguntas, scanner);
                     break;
                 case 3:
                     editarPergunta(perguntas, scanner);
@@ -80,7 +83,7 @@ public class Menu {
         System.out.println("Você fez " + pontos + " pontos nesta jogada.");
     }
 
-    private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner, String enunciadoVerdadeiroFalso) {
+    private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner) {
         System.out.println("ESCOLHA O TIPO DE QUESTÃO QUE DESEJA CRIAR:");
         System.out.println("| 1- PERGUNTA ABERTA           |");
         System.out.println("| 2- PERGUNTA FECHADA          |");
@@ -123,9 +126,7 @@ public class Menu {
                     }
         
                     System.out.println("Digite a letra da alternativa correta (A, B, C, D ou E):");
-                    char letraRespostaCorreta = scanner.nextLine().charAt(0);
-                
-                    respostaCorreta = letraRespostaCorreta;
+                    letraRespostaCorreta = scanner.nextLine().charAt(0);
         
                     PerguntaMultiplaEscolha perguntaMultiplaEscolha = new PerguntaMultiplaEscolha(enunciadoMultiplaEscolha, alternativas, respostaCorreta);
                     perguntas.add(perguntaMultiplaEscolha);
