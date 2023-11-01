@@ -10,13 +10,13 @@ public class Menu {
     private static int letraRespostaCorreta;
 
     public void exibirMenu() {
-        System.out.println("        MENU ");
+        System.out.println("\n       MENU ");
         System.out.println("| 1- JOGAR            |");
         System.out.println("| 2- CRIAR PERGUNTA   |");
         System.out.println("| 3- EDITAR PERGUNTA  |");
         System.out.println("| 4- EXCLUIR PERGUNTA |");
         System.out.println("| 5- HISTÓRICO        |");
-        System.out.println("| 6- SAIR             |");
+        System.out.println("| 6- SAIR             |\n");
     }
     public static void main(String[] args) {
         Menu menu = new Menu();
@@ -65,7 +65,7 @@ public class Menu {
         for (Pergunta pergunta : perguntas) {
             System.out.println("Você Tem 20 Segundos para responder as perguntas!");
             System.out.println("Pergunta: " + pergunta.getEnunciado());
-            Temporizador temporizador = new Temporizador(30); // 30 segundos
+            Temporizador temporizador = new Temporizador(120); // 120 segundos
             temporizador.iniciarTemporizador();
             
             Scanner scanner = new Scanner(System.in);
@@ -84,10 +84,10 @@ public class Menu {
     }
 
     private static void criarPergunta(List<Pergunta> perguntas, Scanner scanner) {
-        System.out.println("ESCOLHA O TIPO DE QUESTÃO QUE DESEJA CRIAR:");
+        System.out.println("\n ESCOLHA O TIPO DE QUESTÃO QUE DESEJA CRIAR:");
         System.out.println("| 1- PERGUNTA ABERTA           |");
         System.out.println("| 2- PERGUNTA FECHADA          |");
-        System.out.println("| 3- PERGUNTA TRUE OR FALSE    |");
+        System.out.println("| 3- PERGUNTA TRUE OR FALSE    |\n");
         int tipo = scanner.nextInt();
         scanner.nextLine(); // Limpar a quebra de linha
 
