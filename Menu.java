@@ -63,7 +63,7 @@ public class Menu {
         Random random = new Random();
 
         for (Pergunta pergunta : perguntas) {
-            System.out.println("Você Tem 20 Segundos para responder as perguntas!");
+            System.out.println("Você Tem 120 Segundos para responder as perguntas!");
             System.out.println("Pergunta: " + pergunta.getEnunciado());
             Temporizador temporizador = new Temporizador(120); // 120 segundos
             temporizador.iniciarTemporizador();
@@ -96,11 +96,11 @@ public class Menu {
                 System.out.println("Digite o enunciado da pergunta:");
                 String enunciado = scanner.nextLine();
                 
-                PerguntaAberta perguntaAberta = new PerguntaAberta(enunciado, enunciado);
-                perguntas.add(perguntaAberta);
-                
                 System.out.println("Escolha a resposta correta:");
                 String respostaCorretaA = scanner.nextLine();
+
+                PerguntaAberta perguntaAberta = new PerguntaAberta(enunciado, enunciado);
+                perguntas.add(perguntaAberta);
                 
                 System.out.println("Resposta Adicionada!");
 
